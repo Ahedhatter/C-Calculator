@@ -49,6 +49,60 @@ int main() {
             default:
                 printf("Invalid input");
         }
+
+
+    }
+
+    return 0;
+}
+// Or the simpler version 
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    char op;
+    double num1;
+    double num2;
+    double answer;
+
+    printf("Select an Operation: (+, -, *, /)\n");
+    scanf(" %c", &op); 
+
+    if (op != '+' && op != '-' && op != '/' && op != '*') {
+        printf("STOOPID ASS, use an op");
+        return 0; 
+    }
+
+    printf("Enter number #1: ");
+    scanf("%lf", &num1);
+    printf("Enter number #2: ");
+    scanf("%lf", &num2);
+
+    switch (op) {
+        default:
+            printf("\nOperator is not valid\n");
+            break;
+        case '+':
+            answer = num1 + num2;
+            printf("\nResult: %.2lf", answer);
+            break;
+        case '-':
+            answer = num1 - num2;
+            printf("\nResult: %.2lf", answer);
+            break;
+        case '*':
+            answer = num1 * num2;
+            printf("\nResult: %.2lf", answer);
+            break;
+        case '/':
+            if (num2 == 0) {
+                printf("\nCannot divide by zero\n");
+                return 0;
+            }
+            answer = num1 / num2;
+            printf("\nResult: %.2lf", answer);
+            break;
     }
 
     return 0;
